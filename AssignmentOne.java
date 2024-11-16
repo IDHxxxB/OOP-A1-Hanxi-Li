@@ -1,3 +1,4 @@
+//Part 1
 class HealthProfessional {
     int id;
     String name;
@@ -14,17 +15,9 @@ class HealthProfessional {
         System.out.println("Name: " + name);
         System.out.println("Information: " + information);
     }
-
-    public void getName(){
-        System.out.println(name);
-    }
-
-    public void setName(String name){
-        this.name = name;
-    }
 }
-//Part One
 
+//Part 2
 class GeneralPractitioner extends HealthProfessional{
     boolean general;
 
@@ -35,9 +28,8 @@ class GeneralPractitioner extends HealthProfessional{
 
     @Override
     public void printInf() {
-        System.out.println("Information for health professionals is as follows:");
         super.printInf();
-        System.out.println("Is it a general practitioner: " + general + "\n");
+        System.out.println("Whether is it a general practitioner: " + general);
     }
 }
 
@@ -51,33 +43,27 @@ class Nurse extends HealthProfessional{
 
     @Override
     public void printInf() {
-        System.out.println("Information for health professionals is as follows:");
         super.printInf();
-        System.out.println("Is it a general practitioner: " + general + "\n");
+        System.out.println("Whether is it a general practitioner: " + general);
     }
 }
-//Part Two
 
 public class AssignmentOne {
     public static void main(String[] args) {
-        int idValue = 1;
-        String nameValue = "Tom";
-        String detailValue = "None";
-        HealthProfessional doctor = new HealthProfessional(idValue, nameValue, detailValue);
 
-        doctor.printInf();
-        doctor.getName();
-        doctor.setName("Jack");
-        doctor.getName();
+        //Part 3 - Using classes and objects
+        GeneralPractitioner G1 = new GeneralPractitioner(1, "Tom", "I am Tom", true);
+        GeneralPractitioner G2 = new GeneralPractitioner(2, "Jack", "I am Jack", true);
+        GeneralPractitioner G3 = new GeneralPractitioner(3, "Jim", "I am Lisa", true);
+        Nurse N1 = new Nurse(4, "Tina", "I am Tina", false);
+        Nurse N2 = new Nurse(5, "Alina", "I am Alina", false);
 
-        GeneralPractitioner G1 = new GeneralPractitioner(1, "Tom", "Professional", true);
+        System.out.println("The health professional details are:");
         G1.printInf();
-
-        Nurse N1 = new Nurse(2, "Tina", "Beautiful", false);
+        G2.printInf();
+        G3.printInf();
         N1.printInf();
-
-        G1.getName();
-        G1.setName("Gigi");
-        G1.getName();
+        N2.printInf();
+        System.out.println("--------------------");
     }
 }
