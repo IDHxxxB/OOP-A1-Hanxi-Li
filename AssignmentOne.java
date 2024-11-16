@@ -23,6 +23,40 @@ class HealthProfessional {
         this.name = name;
     }
 }
+//Part One
+
+class GeneralPractitioner extends HealthProfessional{
+    boolean general;
+
+    public GeneralPractitioner(int id, String name, String information, boolean general) {
+        super(id, name, information);
+        this.general = general;
+    }
+
+    @Override
+    public void printInf() {
+        System.out.println("Information for health professionals is as follows:");
+        super.printInf();
+        System.out.println("Is it a general practitioner: " + general + "\n");
+    }
+}
+
+class Nurse extends HealthProfessional{
+    boolean general;
+
+    public Nurse(int id, String name, String information, boolean general) {
+        super(id, name, information);
+        this.general = general;
+    }
+
+    @Override
+    public void printInf() {
+        System.out.println("Information for health professionals is as follows:");
+        super.printInf();
+        System.out.println("Is it a general practitioner: " + general + "\n");
+    }
+}
+//Part Two
 
 public class AssignmentOne {
     public static void main(String[] args) {
@@ -35,5 +69,15 @@ public class AssignmentOne {
         doctor.getName();
         doctor.setName("Jack");
         doctor.getName();
+
+        GeneralPractitioner G1 = new GeneralPractitioner(1, "Tom", "Professional", true);
+        G1.printInf();
+
+        Nurse N1 = new Nurse(2, "Tina", "Beautiful", false);
+        N1.printInf();
+
+        G1.getName();
+        G1.setName("Gigi");
+        G1.getName();
     }
 }
