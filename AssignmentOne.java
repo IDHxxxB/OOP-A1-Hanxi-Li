@@ -29,7 +29,7 @@ class GeneralPractitioner extends HealthProfessional{
     @Override
     public void printInf() {
         super.printInf();
-        System.out.println("Whether is it a general practitioner: " + general);
+        System.out.println("Whether is it a general practitioner: " + general + "\n");
     }
 }
 
@@ -44,7 +44,34 @@ class Nurse extends HealthProfessional{
     @Override
     public void printInf() {
         super.printInf();
-        System.out.println("Whether is it a general practitioner: " + general);
+        System.out.println("Whether is it a general practitioner: " + general + "\n");
+    }
+}
+
+//Part 4
+class Appointment{
+    String name;
+    String phoneNum;
+    String timeSlot;
+    HealthProfessional selectedDoctor;
+
+    public Appointment(String name, String phoneNum, String timeSlot, HealthProfessional selectedDoctor) {
+        this.name = name;
+        this.phoneNum = phoneNum;
+        this.timeSlot = timeSlot;
+        this.selectedDoctor = selectedDoctor;
+    }
+
+    public void printInf(){
+        System.out.println("Name: " + name);
+        System.out.println("Phone Number: " + phoneNum);
+        System.out.println("Time: " + timeSlot);
+        System.out.println("Selected Doctor: " + selectedDoctor.name);
+
+    }
+
+    public String getName(){
+        return name;
     }
 }
 
@@ -65,5 +92,14 @@ public class AssignmentOne {
         N1.printInf();
         N2.printInf();
         System.out.println("--------------------");
+
+        //Part 4 test
+        Appointment A1 = new Appointment("Zack", "123456", "8:00", N1);
+        Appointment A2 = new Appointment("Emily", "123457", "10:00", G2);
+
+        A1.printInf();
+        A2.printInf();
+
+        System.out.println(A1.getName());
     }
 }
